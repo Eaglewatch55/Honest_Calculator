@@ -1,0 +1,17 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    # place `import` statement at top of the program
+
+
+    # don't modify this code or the variables may not be available
+    x, y = map(float, input().split(' '))
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7179#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 24 Jan 2023 16:20:38 UTC"
+record: -1

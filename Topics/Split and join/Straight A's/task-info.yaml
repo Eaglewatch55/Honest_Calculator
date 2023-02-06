@@ -1,0 +1,23 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: '# put your python code here'
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5959#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 100. Wrong answer
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    F B A A B C A D
+    Correct output:
+    0.38
+
+    Your code output:
+    0 2
+  time: "Sat, 28 Jan 2023 23:58:41 UTC"
+record: -1

@@ -1,0 +1,11 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    a = int(input())
+    b = int(input())
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11687#comment
+status: Solved
+record: -1

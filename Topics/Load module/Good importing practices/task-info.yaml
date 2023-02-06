@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Importing only one module in a single statement.
+- text: Putting all the imports at the top of a script.
+- text: Importing every module just before the code that uses it.
+- text: Importing several modules in a single statement.
+- text: Using the <code>from module import *</code> idiom.
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6021#comment
+status: Unchecked
+record: -1
+local_check: false
