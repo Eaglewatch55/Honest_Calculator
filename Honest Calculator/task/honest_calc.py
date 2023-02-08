@@ -3,10 +3,41 @@ msg_list = ["Enter an equation",
             "Yes ... an interesting math operation. You've slept through all classes, haven't you?",
             "Yeah... division by zero. Smart move...",
             "Do you want to store the result? (y / n):",
-            "Do you want to continue calculations? (y / n):"]
+            "Do you want to continue calculations? (y / n):",
+            " ... lazy",
+            " ... very lazy",
+            " ... very, very lazy",
+            "You are"]
 
 operators = ["+", "-", "*", "/"]
 memory = 0
+
+
+def is_one_digit(v):
+    try:
+        if v.is_integer() and -10 < v < 10:
+            return True
+        else:
+            return False
+    except AttributeError:
+        if -10 < v < 10:
+            return True
+        else:
+            return False
+
+
+def variable_messages(v1, sign, v2):
+    msg = ""
+    if is_one_digit(v1) and is_one_digit(v2):
+        msg = msg + msg_list[6]
+    if (v1 == 1 or v2 == 1) and sign == "*":
+        msg = msg + msg_list[7]
+    if (v1 == 0 or v2 == 0) and (sign == "*" or sign == "+" or sign == "-"):
+        msg = msg + msg_list[8]
+    if msg != "":
+        msg = msg_list[9] + msg
+        print(msg)
+
 
 while True:
 
@@ -44,6 +75,8 @@ while True:
     if operator not in operators:
         print(msg_list[2])
         continue
+
+    variable_messages(x, operator, y)
 
     if operator == "+":
         result = x + y

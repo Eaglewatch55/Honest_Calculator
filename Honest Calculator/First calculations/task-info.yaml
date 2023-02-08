@@ -69,6 +69,6 @@ files:
     if __name__ == '__main__':
         HonestCalc().run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/208/stages/1040/implement#comment
-status: Unchecked
+feedback_link: https://hyperskill.org/learn/step/15811#comment
+status: Solved
 record: 2
