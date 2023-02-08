@@ -7,7 +7,10 @@ msg_list = ["Enter an equation",
             " ... lazy",
             " ... very lazy",
             " ... very, very lazy",
-            "You are"]
+            "You are",
+            "Are you sure? It is only one digit! (y / n)",
+            "Don't be silly! It's just one number! Add to the memory? (y / n)",
+            "Last chance! Do you really want to embarrass yourself? (y / n)"]
 
 operators = ["+", "-", "*", "/"]
 memory = 0
@@ -43,22 +46,27 @@ while True:
 
     calc = input(msg_list[0])
     x, operator, y = calc.split()
+    if x == y == "M":
+        x = memory
+        y = memory
 
-    if x == "M":
+    elif x == "M" and y != "M":
         x = memory
 
         try:
-            y = float(y)
+            if str(type(y)) != "<class 'float'>":
+                y = float(y)
 
         except ValueError:
             print(msg_list[1])
             continue
 
-    elif y == "M":
+    elif y == "M" and x != "M":
         y = memory
 
         try:
-            x = float(x)
+            if str(type(x)) != "<class 'float'>":
+                x = float(x)
 
         except ValueError:
             print(msg_list[1])
@@ -95,7 +103,18 @@ while True:
     while True:
         answer = input(msg_list[4])
         if answer == "y":
-            memory = result
+            if is_one_digit(result):
+                index = 10
+                while index <= 12:
+                    answer = input(msg_list[index])
+                    if answer == "y":
+                        index += 1
+                    elif answer == "n":
+                        break
+                if answer == "y":
+                    memory = result
+            else:
+                memory = result
             break
         elif answer == "n":
             break

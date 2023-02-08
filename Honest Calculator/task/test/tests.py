@@ -9,7 +9,11 @@ msg = ["Enter an equation",
        " ... lazy",
        " ... very lazy",
        " ... very, very lazy",
-       "You are"]
+       "You are",
+       "Are you sure? It is only one digit! (y / n)",
+       "Don't be silly! It's just one number! Add to the memory? (y / n)",
+       "Last chance! Do you really want to embarrass yourself? (y / n)"
+]
 
 
 def add_enter(txt):
@@ -20,12 +24,12 @@ def add_memory(txt):
     return "\n".join([txt, msg[4]])
 
 
-data = [(("4 * 5.5", add_memory("22.0")), ("y", msg[5]), ("n", "")),
-        (("11 * 11.1", add_memory("122.1")), ("y", msg[5]), ("n", "")),
-        (("1 * 5", "\n".join([msg[9] + msg[6] + msg[7], add_memory("5.0")])), ("y", msg[5]), ("y", msg[0]),
-         ("0 + M", "\n".join([msg[9] + msg[6] + msg[8], add_memory("5.0")])), ("y", msg[5]), ("n", "")),
-        (("2 / M", "\n".join([msg[9] + msg[6], add_enter(msg[3])])), ("1 * M", "\n".join([msg[9] + "".join(msg[6:9]), add_memory("0.0")])), ("n", msg[5]), ("y", msg[0]),
-         ("899 * 0", "\n".join([msg[9] + msg[8], add_memory("0.0")])), ("n", msg[5]), ("n", "")),
+data = [(("4 * 5.0", "\n".join([msg[9] + msg[6], add_memory("20.0")])), ("n", msg[5]), ("n", "")),
+        (("2 + 5.5", add_memory("7.5")), ("y", msg[5]), ("y", msg[0]), ("M - 9", add_memory("-1.5")), ("n", msg[5]), ("n", "")),
+        (("225 / 15", add_memory("15.0")), ("y", msg[5]), ("y",msg[0]),
+         ("1 * 5", "\n".join([msg[9] + msg[6] + msg[7], add_memory("5.0")])), ("y", msg[10]), ("y", msg[11]), ("n", msg[5]), ("y", msg[0]),
+        ("M - 10", add_memory("5.0")), ("y", msg[10]), ("y", msg[11]), ("y", msg[12]), ("y", msg[5]), ("y", msg[0]),
+         ("M / M",  "\n".join([msg[9] + msg[6], add_memory("1.0")])), ("n", msg[5]), ("n", "")),
        ]  # (input data, msg sentence])
 
 
